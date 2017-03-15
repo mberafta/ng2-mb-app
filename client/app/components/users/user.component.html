@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4 col-sm-12">
+        <ul class="list-group" *ngIf="users">
+            <li class="list-group-item text-center user-list" *ngFor="let user of users" style="border:solid 2px rgba(31,31,31,0.2);">
+                <p>Utilisateur : {{user.name}}</p> 
+                <p>Mot de passe :<span class="text-danger"> {{user.password}}</span></p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <form [formGroup]="form" (ngSubmit)="addUser(form.value)" style="background: #4e5d6c; padding:10px;">
+            <div class="form-group" [ngClass]="{'has-error':!form.controls['name'].pristine && !form.controls['name'].valid, 'has-success':form.controls['name'].valid}">
+                <label>NOM</label>
+                <input type="text" class="form-control" [formControl]="form.controls['name']" placeholder="Nom d'utilisateur'">
+                <div class="alert alert-danger" *ngIf="!form.controls['name'].pristine && !form.controls['name'].valid">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Veuillez saisir un nom</strong>
+                </div>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error':!form.controls['password'].pristine && !form.controls['password'].valid, 'has-success':form.controls['password'].valid}">
+                <label for="">MOT DE PASSE</label>
+                <input type="text" class="form-control" [(formControl)]="form.controls['password']" placeholder="Mot de passe">
+                <div class="alert alert-danger" *ngIf="!form.controls['password'].pristine && !form.controls['password'].valid">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Veuillez saisir un mot de passe</strong>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info" [disabled]="!form.valid">Valider</button>
+        </form>
+    </div>
+</div>
