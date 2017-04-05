@@ -1,1 +1,12 @@
-<users></users>
+<div class="row" style="padding-bottom: 1.5em;">
+    <div class="col-sm-9">
+        <a class="btn btn-info" routerLink="/users" style="margin-bottom: 10px;">Utilisateurs</a>
+        <a class="btn btn-info" routerLink="/searchUsers" style="margin-bottom: 10px;">Recherche utilisateurs</a>
+        <a class="btn btn-info" routerLink="/searchPlaces" style="margin-bottom: 10px;">Recherche lieu</a>
+        <a class="btn btn-alert" routerLink="/authenticate" style="margin-bottom: 10px;">Se connecter</a>
+    </div>
+    <div class="col-sm-3">
+        <current-user [currentUser]="currentUser"></current-user>
+    </div>
+</div>
+<router-outlet></router-outlet>

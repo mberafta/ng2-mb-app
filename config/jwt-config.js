@@ -1,0 +1,1 @@
+module.exports = { 'secret' : 'ng2mbapp' };

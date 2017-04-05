@@ -4,6 +4,7 @@ var User = (function () {
     function User() {
         this.name = "";
         this.password = "";
+        this.token = "";
     }
     return User;
 }());

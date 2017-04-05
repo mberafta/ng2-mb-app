@@ -1,0 +1,1 @@
+{"version":3,"file":"thread.js","sourceRoot":"","sources":["../../../../app/shared/models/chat-app/thread.ts"],"names":[],"mappings":";;AAAA,+CAAqC;AAErC;IAMI,gBAAY,EAAS,EAAE,IAAa,EAAE,SAAkB;QACpD,IAAI,CAAC,EAAE,GAAG,EAAE,IAAI,oBAAI,CAAC,IAAI,EAAE,CAAC;QAC5B,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC/B,CAAC;IACL,aAAC;AAAD,CAAC,AAXD,IAWC;AAXY,wBAAM"}

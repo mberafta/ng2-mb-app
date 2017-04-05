@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -16,8 +17,9 @@ export class UserService{
         console.log('Service user opérationnel');
     }
 
-    getUsers(){
-        return this.http.get('http://localhost:3000/api/users')
+    /** Obtenir les utilisateurs */
+    getUsers(): Observable<User[]>{
+        return this.http.get('/api/users')
         .map(response => response.json());
     }
 

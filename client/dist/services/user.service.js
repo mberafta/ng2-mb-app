@@ -20,8 +20,9 @@ var UserService = (function () {
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         console.log('Service user opérationnel');
     }
+    /** Obtenir les utilisateurs */
     UserService.prototype.getUsers = function () {
-        return this.http.get('http://localhost:3000/api/users')
+        return this.http.get('/api/users')
             .map(function (response) { return response.json(); });
     };
     UserService.prototype.addUser = function (user) {

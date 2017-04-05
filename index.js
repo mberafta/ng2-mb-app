@@ -4,8 +4,10 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var jwt = require('jsonwebtoken');
+var jwtConfig = require('./config/jwt-config');
 
-var app = express();
+var app = module.exports = express();
 
 // Pour se connecter à la bdd
 require('./config/db');
@@ -14,6 +16,9 @@ app.set('views', path.join(__dirname, 'client', 'views'));
 app.set('view engine', 'html');
 
 app.use(express.static(path.join(__dirname, 'client')));
+
+// set secret jwt
+app.set('secret', jwtConfig.secret);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -44,4 +49,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+//module.exports = app;

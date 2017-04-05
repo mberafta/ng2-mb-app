@@ -20,7 +20,9 @@ var UserComponent = (function () {
         this.formBuilder = formBuilder;
         this.newUser = new user_1.User();
         this.userService.getUsers()
-            .subscribe(function (data) { return _this.users = data; });
+            .subscribe(function (data) {
+            return _this.users = data;
+        });
         this.form = formBuilder.group({
             'name': [null, forms_1.Validators.required],
             'password': [null, forms_1.Validators.required]

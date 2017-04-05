@@ -27,7 +27,9 @@ export class UserComponent {
 
     constructor(private userService: UserService, public formBuilder: FormBuilder) {
         this.userService.getUsers()
-            .subscribe(data => this.users = data);
+            .subscribe(data => 
+            this.users = data
+            );
 
         this.form = formBuilder.group({
             'name': [null, Validators.required],
